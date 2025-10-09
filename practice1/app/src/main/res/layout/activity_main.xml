@@ -8,20 +8,18 @@
     android:background="#000"
     tools:context=".MainActivity">
 
-    <!-- Верхний постер (чуть больше половины экрана) -->
+
     <ImageView
         android:id="@+id/hero"
         android:layout_width="410dp"
         android:layout_height="620dp"
-        android:scaleType="centerCrop"
         android:src="@drawable/picture1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/scroll"
-        app:layout_constraintDimensionRatio="16:10" />
+        app:layout_constraintBottom_toTopOf="@id/scroll" />
 
-<!--    &lt;!&ndash; Затемнение постера снизу &ndash;&gt;-->
+
     <View
         android:id="@+id/overlay"
         android:layout_width="511dp"
@@ -32,20 +30,7 @@
         app:layout_constraintStart_toStartOf="@id/hero"
         app:layout_constraintTop_toTopOf="@id/hero" />
 
-    <!-- Стрелка «назад» слева сверху -->
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="28dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="623dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hero"
-        app:srcCompat="@android:drawable/ic_media_previous"
-        app:tint="#FFFFFF" />
 
-    <!-- Прокручиваемый контент под постером -->
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="434dp"
@@ -58,8 +43,8 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="434dp"
-            android:layout_height="320dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="20dp"
             android:paddingTop="12dp"
@@ -67,7 +52,6 @@
             android:paddingBottom="24dp">
 
 
-            <!-- Рейтинг + кол-во оценок + латиницей -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +79,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Метаданные (год, жанр, сезон, страна, 18+) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,7 +89,6 @@
                 android:textColor="#BDBDBD"
                 android:textSize="13sp" />
 
-            <!-- CTA + круглая кнопка загрузки -->
             <LinearLayout
                 android:layout_width="300dp"
                 android:layout_height="60dp"
@@ -117,14 +99,14 @@
 
                 <TextView
                     android:id="@+id/cta"
-                    android:layout_width="200dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_primary_cta"
                     android:gravity="center"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
-                    android:text="1 сезон, 1 серия"
+                    android:text="@string/_1_1"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
@@ -143,7 +125,6 @@
                 </FrameLayout>
             </LinearLayout>
 
-            <!-- Ряд из 4 действий -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,7 +132,6 @@
                 android:orientation="horizontal"
                 android:weightSum="4">
 
-                <!-- Элемент действия -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -241,7 +221,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Описание (первая строка жирнее / белым) -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -251,7 +230,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
 
-            <!-- Продолжение описания -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -263,7 +241,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Нижняя тёмная панель с навигацией -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="420dp"
@@ -275,8 +252,7 @@
         android:paddingEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="0dp"
