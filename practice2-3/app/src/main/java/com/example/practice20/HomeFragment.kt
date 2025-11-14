@@ -12,10 +12,7 @@ class HomeFragment : Fragment(R.layout.fragment_posts) {
 
     private var _binding: FragmentPostsBinding? = null
     private val binding get() = _binding!!
-
-    // одна ViewModel на nav_graph (не забудь зависимость navigation-fragment-ktx)
     private val vm: PostViewModel by viewModels()
-
     private lateinit var adapter: PostAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
